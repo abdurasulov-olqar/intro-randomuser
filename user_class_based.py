@@ -11,7 +11,10 @@ class RandomUser:
         Returns:
             dict: full data
         '''
-        pass
+        response = requests.get(self.url)
+        if response.status_code == 200:
+            return response.json()
+        return False
     
     def get_cell(self) -> str:
         '''get user cell from randomuser
@@ -19,7 +22,8 @@ class RandomUser:
         Returns:
             str: user cell
         '''
-        pass
+        data = self.get_randomuser()
+        return data['results'][0]['cell']
     
     def get_city(self) -> str:
         '''get user city from randomuser
@@ -124,3 +128,8 @@ class RandomUser:
             dict: user picture
         '''
         pass
+
+
+randomuser = RandomUser()
+print(randomuser.get_randomuser())
+print(randomuser.get_cell())
