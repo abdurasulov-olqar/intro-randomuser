@@ -42,7 +42,8 @@ def get_users(n: int) -> list:
     while len(users) != n:
         user = get_randomuser()
         if user:
-            users.append(get_user(user))
+            if user['results'][0]['gender'] == 'male':
+                users.append(get_user(user))
 
     return users
     
