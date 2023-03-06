@@ -31,7 +31,8 @@ class RandomUser:
         Returns:
             str: user city
         '''
-        pass
+        data = self.get_randomuser()
+        return data['results'][0]['location']['city']
     
     def get_dob(self) -> dict:
         '''get user dob from randomuser
@@ -39,7 +40,8 @@ class RandomUser:
         Returns:
             dict: user dob
         '''
-        pass
+        data = self.get_randomuser()
+        return data['results'][0]['dob']
     
     def get_email(self) -> str:
         '''get user email from randomuser
@@ -47,23 +49,16 @@ class RandomUser:
         Returns:
             str: user email
         '''
-        pass
-    
-    def get_email(self) -> str:
-        '''get user email from randomuser
-        
-        Returns:
-            str: user email
-        '''
-        pass
-    
+        data = self.get_randomuser()
+        return data['results'][0]['email']
     def get_first_name(self) -> str:
         '''get user first name from randomuser
         
         Returns:
             str: user first name
         '''
-        pass
+        data = self.get_randomuser()
+        return data['results'][0]['name']['first']
     
     def get_last_name(self) -> str:
         '''get user last name from randomuser
@@ -71,7 +66,8 @@ class RandomUser:
         Returns:
             str: user last name
         '''
-        pass
+        data = self.get_randomuser()
+        return data['results'][0]['name']['last']
     
     def get_full_name(self) -> str:
         '''get user full name from randomuser
@@ -79,7 +75,8 @@ class RandomUser:
         Returns:
             str: user full name
         '''
-        pass
+        
+        return f'{self.get_first_name()} {self.get_last_name()}'
     
     def get_gender(self) -> str:
         '''get user gender from randomuser
@@ -87,7 +84,8 @@ class RandomUser:
         Returns:
             str: user gender
         '''
-        pass
+        data = self.get_randomuser()
+        return data['results'][0]['gender']
     
     def get_id(self) -> dict:
         '''get user id from randomuser
@@ -95,7 +93,8 @@ class RandomUser:
         Returns:
             dict: user id
         '''
-        pass
+        data = self.get_randomuser()
+        return data['results'][0]['id']
     
     def get_id_number(self) -> str:
         '''get user id number from randomuser
@@ -103,7 +102,8 @@ class RandomUser:
         Returns:
             str: user id number
         '''
-        pass
+        data = self.get_id()
+        return data['value']
     
     def get_info(self) -> dict:
         '''get user info from randomuser
@@ -111,7 +111,7 @@ class RandomUser:
         Returns:
             dict: user info
         '''
-        pass
+        return self.get_randomuser()['info']
     
     def get_nat(self) -> str:
         '''get user nat from randomuser
@@ -119,7 +119,8 @@ class RandomUser:
         Returns:
             str: user nat
         '''
-        pass
+        data = self.get_randomuser()
+        return data['results'][0]['nat']
     
     def get_picture(self) -> dict:
         '''get user picture from randomuser
@@ -127,9 +128,28 @@ class RandomUser:
         Returns:
             dict: user picture
         '''
-        pass
+        data = self.get_randomuser()
+        return data['results'][0]['picture']
 
 
 randomuser = RandomUser()
-print(randomuser.get_randomuser())
-print(randomuser.get_cell())
+# print(randomuser.get_randomuser())
+# print(randomuser.get_cell())
+# print(randomuser.get_city())
+# print(randomuser.get_dob())
+# print(randomuser.get_email())
+# print(randomuser.get_email())
+# print(randomuser.get_first_name())
+# print(randomuser.get_last_name())
+# print(randomuser.get_full_name())
+# print(randomuser.get_gender())
+# print(randomuser.get_id())
+# print(randomuser.get_id_number())
+# print(randomuser.get_info())
+# print(randomuser.get_nat())
+print(randomuser.get_picture())
+
+
+
+
+
